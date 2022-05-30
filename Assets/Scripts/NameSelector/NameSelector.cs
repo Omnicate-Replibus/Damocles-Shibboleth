@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +11,15 @@ using TMPro;
 
 public class NameSelector : MonoBehaviour
 {
+    // Wordle variables
     public List<Transform> wordBoxes = new List<Transform>();
+    public GameObject TextAnimator;
     int currentWordBox = 0;
     string playerGuess = "";
     int visibleGuesses = 4;         // the max number of guesses visible on screen at any given time, including the current guess
     private string characterNames = "QWERTYUIOPASDFGHJKLZXCVBNM";
     string correctGuess = "MARTIN";
+    bool solved = false;
 
     public void AddLetterToWordBox(string letter)
     {
@@ -40,11 +45,12 @@ public class NameSelector : MonoBehaviour
 
     void Return()
     {
-        if (playerGuess == correctGuess)
+        if (playerGuess == correctGuess && solved == false)
         {
-            BeginPlay();
+            solved = true;
+            OpeningAnimation();
         }
-        else
+        else if(solved == false)
         {
             playerGuess = playerGuess.PadRight(6);
             char[] playArr = playerGuess.ToCharArray();
@@ -63,8 +69,6 @@ public class NameSelector : MonoBehaviour
                     nearly.Add(l);
                 }
             }
-            foreach (int a in nearly)
-                Debug.Log(a);
 
             for (int i = 0; i < 6; i++)
             {
@@ -93,7 +97,7 @@ public class NameSelector : MonoBehaviour
     {
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKeyDown(vKey))
+            if (Input.GetKeyDown(vKey) && solved == false)
             {
                 string p = "" + vKey;
                 if(p == "Backspace")
@@ -111,9 +115,27 @@ public class NameSelector : MonoBehaviour
             }
         }
     }
-
-    public void BeginPlay()
+    public async void OpeningAnimation()
     {
-        Debug.Log("Let's go!");
+        await Task.Delay(2000);
+        for (int i = 0; i < 6; i++)
+        {
+            wordBoxes[i].GetComponent<RawImage>().color = new Color(0, 0, 0, 0);
+            for (int j = visibleGuesses - 1; j > 0; j--)
+            {
+                wordBoxes[i + 6 * j].GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
+            }
+        }
+
+        await Task.Delay(2000);
+
+        for (int i = 0; i < 6; i++)
+        {
+            wordBoxes[i].GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
+        }
+
+        await Task.Delay(2000);
+        TextAnimator.GetComponent<textAnimator>().StartText();
     }
+   
 }

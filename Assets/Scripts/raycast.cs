@@ -27,12 +27,10 @@ public class raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3.5f, layerMask))
         { 
             obj = hit.collider.gameObject;
-            Debug.Log($"looking at {obj.name}", this);
         }
         else
         {
             obj = nullobject;
-            Debug.Log("Did not Hit");
         }
     }
 }
