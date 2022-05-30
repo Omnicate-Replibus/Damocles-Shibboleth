@@ -13,9 +13,21 @@ MonoBehaviour:
   m_Name: second
   m_EditorClassIdentifier: 
   nodes:
-  - ID: 
+  - ID: key
     text: super
     children: []
+    rect:
+      serializedVersion: 2
+      x: 10
+      y: 197.2
+      width: 200
+      height: 100
   - ID: 
     text: hot
     children: []
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 200
+      height: 100

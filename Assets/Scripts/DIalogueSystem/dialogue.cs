@@ -18,10 +18,16 @@ namespace Dialogue
                 nodes.Add(new dialogueNode());
             }
         }
+#endif
         public IEnumerable<dialogueNode> GetAllNodes()
         {
             return nodes;
         }
+
+        public dialogueNode GetRootNode()
+        {
+            return nodes[0];
+        }
     }
-#endif
+
 }
