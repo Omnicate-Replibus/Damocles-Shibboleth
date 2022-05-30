@@ -56,7 +56,15 @@ namespace Dialogue.Editor
             }
             else
             {
-                EditorGUILayout.LabelField(selectedDialogue.name);
+                foreach(dialogueNode node in selectedDialogue.GetAllNodes())
+                {
+                    string newText = EditorGUILayout.TextField(node.text);
+                    if(newText != node.text)
+                    {
+                        node.text = newText;
+                        EditorUtility.SetDirty(selectedDialogue);
+                    }
+                }
             }
         }
     }
