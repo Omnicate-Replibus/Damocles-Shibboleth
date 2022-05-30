@@ -11,20 +11,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
   m_Name: New Dialogue
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  nodes:
-  - ID: 
-    text: 
-    children: []
-  - ID: 
-    text: 
-    children: []
-  - ID: 
-    text: 
-    children: []
-  - ID: 
-    text: 
-    children: []
-  - ID: 
-    text: 
-    children: []
+  m_EditorClassIdentifier: Assembly-CSharp:Dialogue:Dialogue
+  nodes: []
