@@ -5,7 +5,7 @@ using TMPro;
 
 public class textwriter : MonoBehaviour
 {
-    public float letterPause = 0.2f;
+    public float letterPause = 0.05f;
     public TMP_Text theTMPgameobject;
 
     string message;
@@ -15,7 +15,7 @@ public class textwriter : MonoBehaviour
     public void TextScroll()
     {
         textComp = GameObject.Find("Renderer").GetComponent<TMP_Text>();
-        message = "Undecidable";
+        message = "Screentest";
         textComp.text = "";
         StartCoroutine(TypeText());
     }
