@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
+using System;
 
 namespace Dialogue.Editor
 {
@@ -10,8 +11,8 @@ namespace Dialogue.Editor
     {
         Dialogue selectedDialogue = null;
         GUIStyle nodeStyle = null;
-        bool dragging = false;
-        dialogueNode draggingNode = null;
+        DialogueNode draggingNode = null;
+        Vector2 draggingOffset;
 
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
@@ -64,7 +65,7 @@ namespace Dialogue.Editor
             else
             {
                 ProcessEvents();
-                foreach(dialogueNode node in selectedDialogue.GetAllNodes())
+                foreach(DialogueNode node in selectedDialogue.GetAllNodes())
                 {
                     OnGUINode(node);
                 }
@@ -73,23 +74,27 @@ namespace Dialogue.Editor
 
         private void ProcessEvents()
         {
-            if(Event.current.type == EventType.MouseDown && !dragging)
+            if(Event.current.type == EventType.MouseDown && draggingNode == null)
             {
-                dragging = true;
+                draggingNode = GetNodeAtPoint(Event.current.mousePosition);
+                if(draggingNode != null)
+                {
+                    draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                }
             }
-            else if (Event.current.type == EventType.MouseDrag && dragging)
+            else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
                 Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
-                selectedDialogue.GetRootNode().rect.position = Event.current.mousePosition;
+                draggingNode.rect.position = Event.current.mousePosition + draggingOffset;
                 GUI.changed = true;
             }
-            else if(Event.current.type == EventType.MouseUp && dragging)
+            else if(Event.current.type == EventType.MouseUp && draggingNode != null)
             {
-                dragging = false;
+                draggingNode = null;
             }
         }
 
-        private void OnGUINode(dialogueNode node)
+        private void OnGUINode(DialogueNode node)
         {
             GUILayout.BeginArea(node.rect, nodeStyle);
             EditorGUI.BeginChangeCheck();
@@ -106,6 +111,20 @@ namespace Dialogue.Editor
             }
             GUILayout.EndArea();
         }
+
+        private DialogueNode GetNodeAtPoint(Vector2 point)
+        {
+            DialogueNode chosenNode = null;
+            foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+            {
+                if(node.rect.Contains(point) == true)
+                {
+                    chosenNode = node;
+                }
+            }
+            return chosenNode;
+        }
+
     }
 
 }

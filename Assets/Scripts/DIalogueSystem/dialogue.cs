@@ -8,23 +8,23 @@ namespace Dialogue
     public class Dialogue : ScriptableObject
     {
         [SerializeField]
-        List<dialogueNode> nodes = new List<dialogueNode>();
+        List<DialogueNode> nodes = new List<DialogueNode>();
 
 #if UNITY_EDITOR
         private void Awake()
         {
             if (nodes.Count == 0)
             {
-                nodes.Add(new dialogueNode());
+                nodes.Add(new DialogueNode());
             }
         }
 #endif
-        public IEnumerable<dialogueNode> GetAllNodes()
+        public IEnumerable<DialogueNode> GetAllNodes()
         {
             return nodes;
         }
 
-        public dialogueNode GetRootNode()
+        public DialogueNode GetRootNode()
         {
             return nodes[0];
         }
