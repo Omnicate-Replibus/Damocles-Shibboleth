@@ -8,6 +8,11 @@ namespace Dialogue
     public class Dialogue : ScriptableObject
     {
         [SerializeField]
-        dialogueNode[] nodes;
+        List<dialogueNode> nodes = new List<dialogueNode>();
+
+        private void Awake()
+        {
+            
+        }
     }
 }
