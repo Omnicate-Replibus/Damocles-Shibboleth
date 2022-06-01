@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1268414418290863208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: fd49495c-bd87-4099-94a4-4d222cb5059e
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - 4228d3e5-b790-42cc-af1d-dbfefba175b3
+  rect:
+    serializedVersion: 2
+    x: 258
+    y: 32
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac626b57447a764fbc499aad66c2f41, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 3250195389346094206}
+  - {fileID: -1268414418290863208}
+  - {fileID: 7997580566996696204}
+--- !u!114 &3250195389346094206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 5700f730-f8a3-4cf0-8898-124633fd7b95
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - fd49495c-bd87-4099-94a4-4d222cb5059e
+  rect:
+    serializedVersion: 2
+    x: 8
+    y: 32
+    width: 200
+    height: 100
+--- !u!114 &7997580566996696204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 4228d3e5-b790-42cc-af1d-dbfefba175b3
+  m_EditorClassIdentifier: 
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 508
+    y: 32
+    width: 200
+    height: 100

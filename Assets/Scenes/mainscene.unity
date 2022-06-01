@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 25883787}
   m_Layer: 0
   m_Name: DialogueOrganizer
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a7c2b4b7b4dfb43a112c822afc0953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: 0.2
+  letterPause: 0.1
   theTMPgameobject: {fileID: 0}
 --- !u!1 &107176139
 GameObject:
@@ -651,9 +651,9 @@ GameObject:
   - component: {fileID: 663668058}
   - component: {fileID: 663668061}
   - component: {fileID: 663668060}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Renderer
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1520,7 +1520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 304742796394307220, guid: 2713ab9c7ab51844f8fedfde643b1e9b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -118
+      value: -124.499954
       objectReference: {fileID: 0}
     - target: {fileID: 304742796645075766, guid: 2713ab9c7ab51844f8fedfde643b1e9b, type: 3}
       propertyPath: m_RootOrder

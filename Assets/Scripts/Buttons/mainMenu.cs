@@ -18,7 +18,7 @@ public class mainMenu : MonoBehaviour
     {
         if (isStart)
         {
-            SceneManager.LoadScene("mainscene");
+            SceneManager.LoadScene("nameselect");
         }
         if (isQuit)
         {

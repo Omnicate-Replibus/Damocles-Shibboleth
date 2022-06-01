@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7508318950672439345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: ea7ab9f1-70b9-43e9-8d38-2eaa20d13a99
+  m_EditorClassIdentifier: 
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 345
+    y: 61
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac626b57447a764fbc499aad66c2f41, type: 3}
+  m_Name: Test 2
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 7973030461378997442}
+  - {fileID: -7508318950672439345}
+--- !u!114 &7973030461378997442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 2da036ae-27b1-45ef-aed1-0a6d7bc7567f
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - ea7ab9f1-70b9-43e9-8d38-2eaa20d13a99
+  rect:
+    serializedVersion: 2
+    x: -18
+    y: 191.99998
+    width: 200
+    height: 100
