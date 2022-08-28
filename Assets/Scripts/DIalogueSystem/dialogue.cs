@@ -63,6 +63,7 @@ namespace Dialogue
             {
                 childNode.SetRect(new Rect(parent.GetRect().xMax + 50f, parent.GetRect().y, parent.GetRect().width, parent.GetRect().height));
                 parent.AddChild(childNode.name);
+                childNode.SetPlayerSpeaking(!parent.IsPlayerSpeaking());
             }
 
             return childNode;

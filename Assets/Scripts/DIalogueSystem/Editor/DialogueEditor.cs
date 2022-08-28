@@ -16,6 +16,10 @@ namespace Dialogue.Editor
         [NonSerialized]
         GUIStyle selectedNodeStyle = null;
         [NonSerialized]
+        GUIStyle playerNodeStyle = null;
+        [NonSerialized]
+        GUIStyle selectedplayerNodeStyle = null;
+        [NonSerialized]
         DialogueNode draggingNode = null;
         [NonSerialized]
         Vector2 draggingOffset;
@@ -60,12 +64,23 @@ namespace Dialogue.Editor
         {
             nodeStyle = new GUIStyle();
             nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
-            selectedNodeStyle = new GUIStyle();
-            selectedNodeStyle.normal.background = EditorGUIUtility.Load("node0 on") as Texture2D;
             nodeStyle.padding = new RectOffset(20, 20, 20, 20);
             nodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+            selectedNodeStyle = new GUIStyle();
+            selectedNodeStyle.normal.background = EditorGUIUtility.Load("node0 on") as Texture2D;
             selectedNodeStyle.padding = new RectOffset(20, 20, 20, 20);
             selectedNodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+            playerNodeStyle = new GUIStyle();
+            playerNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
+            playerNodeStyle.padding = new RectOffset(20, 20, 20, 20);
+            playerNodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+            selectedplayerNodeStyle = new GUIStyle();
+            selectedplayerNodeStyle.normal.background = EditorGUIUtility.Load("node1 on") as Texture2D;
+            selectedplayerNodeStyle.padding = new RectOffset(20, 20, 20, 20);
+            selectedplayerNodeStyle.border = new RectOffset(12, 12, 12, 12);
 
             Dialogue newDialogue = Selection.activeObject as Dialogue; // if this isn't here then you need to                                                       
             if (newDialogue != null)                                   // click off the dialogue box and then
@@ -174,14 +189,30 @@ namespace Dialogue.Editor
         {
             nodesX.Add(node.GetRect().xMax);
             nodesY.Add(node.GetRect().yMax);
-            if (node.name == selectedDialogueNodeName)
+            GUIStyle style = new GUIStyle();
+            if (node.name == selectedDialogueNodeName) //maybe make a variable for "style" then change it depending on who's talking?
             {
-                GUILayout.BeginArea(node.GetRect(), selectedNodeStyle);
+                if (node.IsPlayerSpeaking())
+                {
+                    style = selectedplayerNodeStyle;
+                }
+                else
+                {
+                    style = selectedNodeStyle;
+                }
             }
             else
             {
-                GUILayout.BeginArea(node.GetRect(), nodeStyle);
+                if (node.IsPlayerSpeaking())
+                {
+                    style = playerNodeStyle;
+                }
+                else
+                {
+                    style = nodeStyle;
+                }
             }
+            GUILayout.BeginArea(node.GetRect(), style);
 
             node.SetText(EditorGUILayout.TextField(node.GetText()));
 

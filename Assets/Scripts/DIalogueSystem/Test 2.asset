@@ -12,12 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
   m_Name: ea7ab9f1-70b9-43e9-8d38-2eaa20d13a99
   m_EditorClassIdentifier: 
-  text: 
-  children: []
+  isPlayerSpeaking: 0
+  text: Wonderful!
+  children:
+  - 5926d280-b2d0-4efb-8dae-28b61a2503b8
   rect:
     serializedVersion: 2
-    x: 345
-    y: 61
+    x: 237.99998
+    y: 30
+    width: 200
+    height: 100
+--- !u!114 &-1165304143018376522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 823323d4-2223-47a6-833b-87383119ec79
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 
+  children:
+  - 8509eaa7-622e-43d7-b818-3e142c82cd3b
+  rect:
+    serializedVersion: 2
+    x: 695
+    y: 132.00003
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -35,6 +59,30 @@ MonoBehaviour:
   nodes:
   - {fileID: 7973030461378997442}
   - {fileID: -7508318950672439345}
+  - {fileID: 8949624984133972774}
+  - {fileID: -1165304143018376522}
+  - {fileID: 2392232426123450506}
+--- !u!114 &2392232426123450506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 8509eaa7-622e-43d7-b818-3e142c82cd3b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 910
+    y: 216.00002
+    width: 200
+    height: 100
 --- !u!114 &7973030461378997442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,12 +95,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
   m_Name: 2da036ae-27b1-45ef-aed1-0a6d7bc7567f
   m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
   text: 
   children:
   - ea7ab9f1-70b9-43e9-8d38-2eaa20d13a99
   rect:
     serializedVersion: 2
-    x: -18
-    y: 191.99998
+    x: 14
+    y: 17.999985
+    width: 200
+    height: 100
+--- !u!114 &8949624984133972774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476bcdfd17c3e374c9408e7b22c2985d, type: 3}
+  m_Name: 5926d280-b2d0-4efb-8dae-28b61a2503b8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 
+  children:
+  - 823323d4-2223-47a6-833b-87383119ec79
+  rect:
+    serializedVersion: 2
+    x: 472
+    y: 72
     width: 200
     height: 100

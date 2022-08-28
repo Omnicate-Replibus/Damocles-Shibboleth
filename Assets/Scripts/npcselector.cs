@@ -16,11 +16,14 @@ public class npcselector : MonoBehaviour
     void Update()
     {
         var target = GameObject.Find("Game Camera - RENDERS TO TEXTURE").GetComponent<raycast>().obj;
-        var pause = GameObject.Find("Example UI").GetComponent<UIcontrol>().paused;
+        var pause = GameObject.Find("UI").GetComponent<UIcontrol>().paused;
 
         if (target.CompareTag("NPC") && pause == false && talking == false)
         {
             interactKey.SetActive(true);
+            target.GetComponent<Outline>().enabled = true;
+  
+
             if (Input.GetKeyDown("e"))
             {
                 talking = true;
